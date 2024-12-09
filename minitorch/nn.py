@@ -100,7 +100,7 @@ def avgpool2d(input: Tensor, kernel: Tuple[int, int]) -> Tensor:
     return output
 
 
-def argmax(tensor: Tensor, dim: Optional[int] = None) -> Tensor:
+def argmax(tensor: Tensor, dim: int = 0) -> Tensor:
     """Return a one-hot tensor to indicate the argmax"""
     return tensor == tensor.f.max_reduce(tensor, dim)
 

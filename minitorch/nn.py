@@ -51,8 +51,8 @@ def tile(input: Tensor, kernel: Tuple[int, int]) -> Tuple[Tensor, int, int]:
     assert height % kh == 0
     assert width % kw == 0
     # TODO: Implement for Task 4.3.
-    new_height = height / kh
-    new_width = width / kw
+    new_height = int(height / kh)
+    new_width = int(width / kw)
     input = input.contiguous()
     input = input.view(batch, channel, new_height, kh, new_width, kw)
     input = input.permute(0, 1, 2, 4, 3, 5).contiguous()
